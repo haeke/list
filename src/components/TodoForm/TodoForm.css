@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   width: 400px;
+  background: var(--brandColor);
+  padding: 30px;
+  color: var(--mainWhite);
+  border-radius: 5px 20px 5px;
   margin: 20px auto;
 }
 
