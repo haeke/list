@@ -21,7 +21,7 @@
 
 .todoInput {
   margin: 0 0 10px 0;
-  border: 1px solid var(--altBrandColor);
+  border: 3px solid var(--altBrandColor);
   height: 25px;
   font-size: 1.3rem;
   padding: 2px;

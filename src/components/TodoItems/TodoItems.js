@@ -22,7 +22,7 @@ const TodoItems = ({ todoItems, handleDelete, handleMarkComplete }) => {
           </h1>
           <p className="todoDate">Start Date: {item.start} </p>
           <p className="todoDate"> End Date: {item.end}</p>
-          <p className="todoTime">Time Spent: {item.timeSpent}</p>
+          <p className="todoTime">Time Spent: {item.timeSpent} hours</p>
           <button className="todoButton" onClick={() => handleDelete(item.id)}>
             Delete Item
           </button>
