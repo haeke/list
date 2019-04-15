@@ -5,17 +5,32 @@ import "./TodoItems.css";
 
 // The TodoItems creates the UI for each individual todo list item. The handleDelete function will be used if a user want's to remove an item.
 
-const TodoItems = ({ todoItems, handleDelete }) => {
+const TodoItems = ({ todoItems, handleDelete, handleMarkComplete }) => {
   return (
     <section className="todoItemContainer">
       {todoItems.map(item => (
         <div className="todoCard" key={item.id}>
-          <h1 className="todoHeader">{item.name}</h1>
+          <h1
+            className="todoHeader"
+            style={
+              item.completed
+                ? { textDecoration: "line-through" }
+                : { textDecoration: "none" }
+            }
+          >
+            {item.name}
+          </h1>
           <p className="todoDate">Start Date: {item.start} </p>
           <p className="todoDate"> End Date: {item.end}</p>
           <p className="todoTime">Time Spent: {item.timeSpent}</p>
           <button className="todoButton" onClick={() => handleDelete(item.id)}>
             Delete Item
+          </button>
+          <button
+            className="todoButton"
+            onClick={() => handleMarkComplete(item.id)}
+          >
+            Mark Complete
           </button>
         </div>
       ))}
@@ -32,7 +47,8 @@ TodoItems.propTypes = {
       timeSpent: PropTypes.string
     })
   ),
-  handleDelete: PropTypes.func
+  handleDelete: PropTypes.func,
+  handleMarkComplete: PropTypes.func
 };
 
 export default TodoItems;

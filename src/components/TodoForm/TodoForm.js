@@ -36,6 +36,17 @@ class TodoForm extends Component {
     });
   };
 
+  handleMarkComplete = id => {
+    const { todoItems } = this.state;
+    // loop through the todoItems array, set the completed boolean to true where the id matches the id passed from the TodoItems component.
+    let itemToMark = todoItems.map(item =>
+      item.id === id ? { ...item, completed: true } : item
+    );
+    this.setState(() => ({
+      todoItems: itemToMark
+    }));
+  };
+
   // The handleSubmit component will add a new object to the todoItems array when a user submits the form.
   handleSubmit = event => {
     // Use preventDefault so that the browser does not reload after the form is submitted.
@@ -144,7 +155,11 @@ class TodoForm extends Component {
           <h1 className="todoError">* Please Check for missing fields.</h1>
         )}
         {todoItems.length > 0 && (
-          <TodoItems todoItems={todoItems} handleDelete={this.handleDelete} />
+          <TodoItems
+            todoItems={todoItems}
+            handleDelete={this.handleDelete}
+            handleMarkComplete={this.handleMarkComplete}
+          />
         )}
       </React.Fragment>
     );
