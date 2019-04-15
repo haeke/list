@@ -8,12 +8,9 @@ Project URL - https://haeke.github.io/list
 
 ## Technologies used
 
-# React - Stateful and Presentaional Components
-
-# Semantic HTML5
-
-# CSS3
-
-# Flexbox
-
-# Github Pages
+- React - Stateful and Presentaional Components
+- PropTypes
+- Semantic HTML5
+- CSS3
+- Flexbox
+- Github Pages
