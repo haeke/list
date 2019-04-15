@@ -1,3 +1,15 @@
+:root {
+  font-size: 16px;
+  --brandColor: #004687;
+  --altBrandColor: #bd9b60;
+  --mainWhite: #ffffff;
+  --mainBlack: #000000;
+}
+
+::placeholder {
+  color: var(--mainBlack);
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,6 +18,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+}
+
+p {
+  font-family: "Lora", serif;
 }
 
 code {
