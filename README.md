@@ -9,7 +9,12 @@ Project URL - https://haeke.github.io/list
 ## Technologies used
 
 - React - Stateful and Presentaional Components
-- PropTypes
+- TypeScript - type definitions and interfaces
+  - TodoForm includes interfaces that define the TodoItem interface and State object
+  - The TodoItem interface is an object that contains the id, name, start, end, timeSpent, completed and active properties.
+  - The State object contains the id, name, start, end, timeSpent, completed and active and a todoItems array as properties.
+  - The TodoItems component uses the TodoItem interface object.
+- Local Storage is used to keep a local copy of your personal Todo List items in your browser.
 - Semantic HTML5
 - CSS3
 - Flexbox
