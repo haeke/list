@@ -1,11 +1,25 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 import "./TodoItems.css";
 
+interface TodoItem {
+  id: number;
+  name: string;
+  start: string;
+  end: string;
+  timeSpent: number;
+  completed: boolean;
+  active: boolean;
+  todoItems: Array<object>;
+}
+
 // The TodoItems creates the UI for each individual todo list item. The handleDelete function will be used if a user want's to remove an item.
 
-const TodoItems = ({ todoItems, handleDelete, handleMarkComplete }) => {
+const TodoItems: React.SFC<{
+  todoItems: Array<TodoItem>;
+  handleDelete: (id: number) => void;
+  handleMarkComplete: (id: number) => void;
+}> = ({ todoItems, handleDelete, handleMarkComplete }) => {
   return (
     <section className="todoItemContainer">
       {todoItems.map(item => (
@@ -36,19 +50,6 @@ const TodoItems = ({ todoItems, handleDelete, handleMarkComplete }) => {
       ))}
     </section>
   );
-};
-
-TodoItems.propTypes = {
-  todoItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-      end: PropTypes.string,
-      timeSpent: PropTypes.string
-    })
-  ),
-  handleDelete: PropTypes.func,
-  handleMarkComplete: PropTypes.func
 };
 
 export default TodoItems;
